@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330DDAE91D885221006B7570 /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330DDAE81D885221006B7570 /* GroupView.swift */; };
 		332892C81D81BBA8007E10F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332892C71D81BBA8007E10F5 /* AppDelegate.swift */; };
 		332892CA1D81BBA8007E10F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332892C91D81BBA8007E10F5 /* ViewController.swift */; };
 		332892CD1D81BBA8007E10F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 332892CB1D81BBA8007E10F5 /* Main.storyboard */; };
@@ -14,6 +15,9 @@
 		332892D21D81BBA8007E10F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 332892D01D81BBA8007E10F5 /* LaunchScreen.storyboard */; };
 		332892DD1D81BBA8007E10F5 /* SeatingChartIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332892DC1D81BBA8007E10F5 /* SeatingChartIOSTests.swift */; };
 		332892E81D81BBA8007E10F5 /* SeatingChartIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332892E71D81BBA8007E10F5 /* SeatingChartIOSUITests.swift */; };
+		332892F61D81BC31007E10F5 /* StudentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332892F51D81BC31007E10F5 /* StudentView.swift */; };
+		332892F81D81BD17007E10F5 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332892F71D81BD17007E10F5 /* Student.swift */; };
+		33752C641D870719003A1D76 /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33752C631D870719003A1D76 /* UtilityFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		330DDAE81D885221006B7570 /* GroupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
 		332892C41D81BBA8007E10F5 /* SeatingChartIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeatingChartIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		332892C71D81BBA8007E10F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		332892C91D81BBA8007E10F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +52,9 @@
 		332892E31D81BBA8007E10F5 /* SeatingChartIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeatingChartIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		332892E71D81BBA8007E10F5 /* SeatingChartIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatingChartIOSUITests.swift; sourceTree = "<group>"; };
 		332892E91D81BBA8007E10F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		332892F51D81BC31007E10F5 /* StudentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentView.swift; sourceTree = "<group>"; };
+		332892F71D81BD17007E10F5 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		33752C631D870719003A1D76 /* UtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,10 @@
 				332892CE1D81BBA8007E10F5 /* Assets.xcassets */,
 				332892D01D81BBA8007E10F5 /* LaunchScreen.storyboard */,
 				332892D31D81BBA8007E10F5 /* Info.plist */,
+				332892F51D81BC31007E10F5 /* StudentView.swift */,
+				332892F71D81BD17007E10F5 /* Student.swift */,
+				33752C631D870719003A1D76 /* UtilityFunctions.swift */,
+				330DDAE81D885221006B7570 /* GroupView.swift */,
 			);
 			path = SeatingChartIOS;
 			sourceTree = "<group>";
@@ -257,7 +269,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				332892CA1D81BBA8007E10F5 /* ViewController.swift in Sources */,
+				332892F61D81BC31007E10F5 /* StudentView.swift in Sources */,
+				330DDAE91D885221006B7570 /* GroupView.swift in Sources */,
 				332892C81D81BBA8007E10F5 /* AppDelegate.swift in Sources */,
+				33752C641D870719003A1D76 /* UtilityFunctions.swift in Sources */,
+				332892F81D81BD17007E10F5 /* Student.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +500,7 @@
 				332892EE1D81BBA8007E10F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		332892EF1D81BBA8007E10F5 /* Build configuration list for PBXNativeTarget "SeatingChartIOSTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +509,7 @@
 				332892F11D81BBA8007E10F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		332892F21D81BBA8007E10F5 /* Build configuration list for PBXNativeTarget "SeatingChartIOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +518,7 @@
 				332892F41D81BBA8007E10F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
