@@ -16,4 +16,5 @@ func randomUIColor() -> UIColor
     let brightness : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from black
     
     return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
+    
 }

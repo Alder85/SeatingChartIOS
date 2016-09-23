@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3303710B1D89A33500C571B8 /* GroupSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3303710A1D89A33500C571B8 /* GroupSubview.swift */; };
+		3303710D1D89A84900C571B8 /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3303710C1D89A84900C571B8 /* RectangleView.swift */; };
 		330DDAE91D885221006B7570 /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330DDAE81D885221006B7570 /* GroupView.swift */; };
 		332892C81D81BBA8007E10F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332892C71D81BBA8007E10F5 /* AppDelegate.swift */; };
 		332892CA1D81BBA8007E10F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332892C91D81BBA8007E10F5 /* ViewController.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3303710A1D89A33500C571B8 /* GroupSubview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupSubview.swift; sourceTree = "<group>"; };
+		3303710C1D89A84900C571B8 /* RectangleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
 		330DDAE81D885221006B7570 /* GroupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
 		332892C41D81BBA8007E10F5 /* SeatingChartIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeatingChartIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		332892C71D81BBA8007E10F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 				332892F71D81BD17007E10F5 /* Student.swift */,
 				33752C631D870719003A1D76 /* UtilityFunctions.swift */,
 				330DDAE81D885221006B7570 /* GroupView.swift */,
+				3303710A1D89A33500C571B8 /* GroupSubview.swift */,
+				3303710C1D89A84900C571B8 /* RectangleView.swift */,
 			);
 			path = SeatingChartIOS;
 			sourceTree = "<group>";
@@ -205,13 +211,16 @@
 				TargetAttributes = {
 					332892C31D81BBA8007E10F5 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					332892D71D81BBA8007E10F5 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 332892C31D81BBA8007E10F5;
 					};
 					332892E21D81BBA8007E10F5 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 332892C31D81BBA8007E10F5;
 					};
 				};
@@ -274,6 +283,8 @@
 				332892C81D81BBA8007E10F5 /* AppDelegate.swift in Sources */,
 				33752C641D870719003A1D76 /* UtilityFunctions.swift in Sources */,
 				332892F81D81BD17007E10F5 /* Student.swift in Sources */,
+				3303710D1D89A84900C571B8 /* RectangleView.swift in Sources */,
+				3303710B1D89A33500C571B8 /* GroupSubview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,9 +429,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SeatingChartIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.potatoesalad.SeatingChartIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -429,9 +442,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SeatingChartIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.potatoesalad.SeatingChartIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -443,6 +458,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.potatoesalad.SeatingChartIOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SeatingChartIOS.app/SeatingChartIOS";
 			};
 			name = Debug;
@@ -455,6 +471,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.potatoesalad.SeatingChartIOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SeatingChartIOS.app/SeatingChartIOS";
 			};
 			name = Release;
@@ -466,6 +483,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.potatoesalad.SeatingChartIOSUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = SeatingChartIOS;
 			};
 			name = Debug;
@@ -477,6 +495,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.potatoesalad.SeatingChartIOSUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = SeatingChartIOS;
 			};
 			name = Release;

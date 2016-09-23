@@ -19,8 +19,8 @@ class ViewController: UIViewController
         let testStudentView = StudentView(startPoint: CGPoint(x: 10, y: 10), inStudent: testStudent)
         self.view.addSubview(testStudentView)
         
-        let groupView = GroupView(startPoint: CGPoint(x: 100, y: 100))
-        self.view.addSubview(groupView)
+        let rectangleView = RectangleView(startPoint: CGPoint(x: 50, y: 50))
+        self.view.addSubview(rectangleView)
         
     }
 

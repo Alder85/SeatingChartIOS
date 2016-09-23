@@ -10,13 +10,13 @@ import Foundation
 
 class Student: NSObject, NSCoding
 {
-    private var informationArray: [String] = []
-    private var name: String        = "invalid name"
-    private var instrument: String  = "invalid instrument"
-    private var chair: Int          = -42
+    fileprivate var informationArray: [String] = []
+    fileprivate var name: String        = "invalid name"
+    fileprivate var instrument: String  = "invalid instrument"
+    fileprivate var chair: Int          = -42
     
-    static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("Students")
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("Students")
     
     struct PropertyKey {
         static let informationKey = "information"
@@ -42,12 +42,12 @@ class Student: NSObject, NSCoding
         chair = inChair
     }
     
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(informationArray, forKey: PropertyKey.informationKey)
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(informationArray, forKey: PropertyKey.informationKey)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        let informationArray = aDecoder.decodeObjectForKey(PropertyKey.informationKey) as! [String]
+        let informationArray = aDecoder.decodeObject(forKey: PropertyKey.informationKey) as! [String]
         
         // Must call designated initializer.
         self.init(inArray: informationArray)
@@ -68,17 +68,17 @@ class Student: NSObject, NSCoding
         return chair
     }
     
-    func setName(inName: String)
+    func setName(_ inName: String)
     {
         name = inName
     }
     
-    func setInstrument(inInstrument: String)
+    func setInstrument(_ inInstrument: String)
     {
         instrument = inInstrument
     }
     
-    func setChair(inChair: Int)
+    func setChair(_ inChair: Int)
     {
         chair = inChair
     }
@@ -88,7 +88,7 @@ class Student: NSObject, NSCoding
         return informationArray
     }
     
-    func setInformation(str: String, loc: Int)
+    func setInformation(_ str: String, loc: Int)
     {
         informationArray[loc] = str
     }
