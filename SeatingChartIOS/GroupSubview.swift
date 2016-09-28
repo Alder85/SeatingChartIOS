@@ -23,7 +23,8 @@ class GroupSubview: UIView
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        UIColor.blue.setFill()
+        //UIColor.blue.setFill()
+        randomUIColor().setFill()
         UIRectFill(rect)
     }
 }

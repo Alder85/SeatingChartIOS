@@ -19,6 +19,7 @@
 		332892E81D81BBA8007E10F5 /* SeatingChartIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332892E71D81BBA8007E10F5 /* SeatingChartIOSUITests.swift */; };
 		332892F61D81BC31007E10F5 /* StudentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332892F51D81BC31007E10F5 /* StudentView.swift */; };
 		332892F81D81BD17007E10F5 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332892F71D81BD17007E10F5 /* Student.swift */; };
+		334F25B51D99792C001C296D /* CurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334F25B41D99792C001C296D /* CurveView.swift */; };
 		33752C641D870719003A1D76 /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33752C631D870719003A1D76 /* UtilityFunctions.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		332892E91D81BBA8007E10F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		332892F51D81BC31007E10F5 /* StudentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentView.swift; sourceTree = "<group>"; };
 		332892F71D81BD17007E10F5 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		334F25B41D99792C001C296D /* CurveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveView.swift; sourceTree = "<group>"; };
 		33752C631D870719003A1D76 /* UtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +123,7 @@
 				330DDAE81D885221006B7570 /* GroupView.swift */,
 				3303710A1D89A33500C571B8 /* GroupSubview.swift */,
 				3303710C1D89A84900C571B8 /* RectangleView.swift */,
+				334F25B41D99792C001C296D /* CurveView.swift */,
 			);
 			path = SeatingChartIOS;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				334F25B51D99792C001C296D /* CurveView.swift in Sources */,
 				332892CA1D81BBA8007E10F5 /* ViewController.swift in Sources */,
 				332892F61D81BC31007E10F5 /* StudentView.swift in Sources */,
 				330DDAE91D885221006B7570 /* GroupView.swift in Sources */,
