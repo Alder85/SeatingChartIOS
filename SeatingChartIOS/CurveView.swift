@@ -12,19 +12,18 @@ import UIKit
 class CurveView: GroupView
 {
     var numRows: CGFloat
-    var rowLength: CGFloat
     var buttonArray: [UIButton] = []
     var leftRect = false
     let BUTTON_SIZE: CGFloat = 20
-    let SUBVIEW_HEIGHT: CGFloat = 50
+    let SUBVIEW_SIZE: CGFloat = 50
     
-    init(inRect: CGRect, isLeft: Bool, rows: CGFloat, length: CGFloat)
+    init(inRect: CGRect, isLeft: Bool, rows: CGFloat)
     {
         leftRect = isLeft
         numRows = rows
-        rowLength = length
         super.init(rect: inRect)
         makeButtons()
+        
         
         for i in 0...(Int(rows - 1))
         {
@@ -51,7 +50,7 @@ class CurveView: GroupView
         {
             for i in 1...Int(numRows)
             {
-                let y = ((self.frame.size.width - rowLength) / numRows) * CGFloat(i)
+                let y = ((self.frame.size.width - SUBVIEW_SIZE) / numRows) * CGFloat(i)
                 makeAddButton(CGPoint(x: y - 47, y: self.frame.height - 22), row: i)
                 makeSubtractButton(CGPoint(x: y - 25, y: self.frame.height - 22), row: i)
             }
@@ -60,7 +59,7 @@ class CurveView: GroupView
         {
             for i in 1...Int(numRows)
             {
-                let y = ((self.frame.size.width - rowLength) / numRows) * (numRows - CGFloat(i))
+                let y = ((self.frame.size.width - SUBVIEW_SIZE) / numRows) * (numRows - CGFloat(i))
                 makeAddButton(CGPoint(x: y + 69, y: self.frame.height - 22), row: i)
                 makeSubtractButton(CGPoint(x: y + 91, y: self.frame.height - 22), row: i) //height above bot
             }
@@ -125,23 +124,30 @@ class CurveView: GroupView
     {
         for i in 1...Int(numRows)
         {
-            let startSpot = ((self.frame.size.width - rowLength) / numRows) * CGFloat(i)
+            let startSpot = ((self.frame.size.width - SUBVIEW_SIZE) / numRows) * CGFloat(i)
             if !leftRect
             {
-                makeRightSubviewCurve(startSpot, length: rowLength, curveNumber: (i-1))
+                makeRightSubviewCurve(startSpot, curveNumber: (i-1))
             }
             else
             {
-                makeLeftSubviewCurve(startSpot, length: rowLength, curveNumber: (i-1))
+                makeLeftSubviewCurve(startSpot, curveNumber: (i-1))
             }
         }
     }
     
-    func makeRightSubviewCurve(_ startSpot: CGFloat, length: CGFloat, curveNumber: Int)
+    func makeRightSubviewCurve(_ startSpot: CGFloat, curveNumber: Int)
     {
         let numSubviews = subviewArray[curveNumber].count
         if numSubviews <= 0
         {
+            return
+        }
+        if numSubviews == 1
+        {
+            let tempDegree = round( CGFloat(Double(startSpot) * sin(M_PI / 4)) )
+            subviewArray[curveNumber][0].frame = CGRect(x: tempDegree, y: self.frame.height - tempDegree - SUBVIEW_SIZE, width: SUBVIEW_SIZE, height: SUBVIEW_SIZE)
+            self.addSubview(subviewArray[curveNumber][0])
             return
         }
         for i in 0...numSubviews - 1
@@ -150,41 +156,39 @@ class CurveView: GroupView
             let tempX = round( CGFloat(Double(startSpot) * cos(t)) )
             let tempY = round( CGFloat(Double(startSpot) * sin(t)) )
             
-            subviewArray[curveNumber][i].frame = CGRect(x: tempX, y: self.frame.height - SUBVIEW_HEIGHT - tempY, width: SUBVIEW_HEIGHT, height: SUBVIEW_HEIGHT)
+            subviewArray[curveNumber][i].frame = CGRect(x: tempX, y: self.frame.height - SUBVIEW_SIZE - tempY, width: SUBVIEW_SIZE, height: SUBVIEW_SIZE)
             
             self.addSubview(subviewArray[curveNumber][i])
         }
-        if numSubviews == 1
-        {
-            let tempDegree = round( CGFloat(Double(startSpot) * sin(M_PI / 4)) )
-            subviewArray[curveNumber][0].frame = CGRect(x: tempDegree, y: tempDegree, width: SUBVIEW_HEIGHT, height: SUBVIEW_HEIGHT)
-            self.addSubview(subviewArray[curveNumber][0])
-        }
+        
     }
     
-    func makeLeftSubviewCurve(_ startSpot: CGFloat, length: CGFloat, curveNumber: Int)
+    func makeLeftSubviewCurve(_ startSpot: CGFloat, curveNumber: Int)
     {
         let numSubviews = subviewArray[curveNumber].count
         if numSubviews <= 0
         {
             return
         }
-        for i in 0...numSubviews - 1
-        {
-            let t = ((M_PI / 2) / Double(numSubviews - 1)) * Double(i)
-            let tempX = self.frame.maxX - (round( CGFloat(Double(startSpot) * cos(t)) ) + 50)
-            let tempY = round( CGFloat(Double(startSpot) * sin(t)) )
-            
-            subviewArray[curveNumber][i].frame = CGRect(x: tempX, y: self.frame.height - SUBVIEW_HEIGHT - tempY, width: 50, height: 50)
-            
-            self.addSubview(subviewArray[curveNumber][i])
-        }
         if numSubviews == 1
         {
             let tempDegree = round( CGFloat(Double(startSpot) * sin(M_PI / 4)) )
-            subviewArray[curveNumber][0].frame = CGRect(x: tempDegree, y: tempDegree, width: SUBVIEW_HEIGHT, height: SUBVIEW_HEIGHT)
+            subviewArray[curveNumber][0].frame = CGRect(x: tempDegree, y: tempDegree, width: SUBVIEW_SIZE, height: SUBVIEW_SIZE)
             self.addSubview(subviewArray[curveNumber][0])
+            return
         }
+        for i in 0...numSubviews - 1
+        {
+            let t = ((M_PI / 2) / Double(numSubviews - 1)) * Double(i)
+            //let tempX = self.frame.maxX - (round( CGFloat(Double(startSpot) * cos(t)) ) + 50)
+            let tempX = self.frame.width - round( CGFloat(Double(startSpot) * cos(t)) ) - SUBVIEW_SIZE
+            let tempY = round( CGFloat(Double(startSpot) * sin(t)) )
+            
+            subviewArray[curveNumber][i].frame = CGRect(x: tempX, y: self.frame.height - SUBVIEW_SIZE - tempY, width: 50, height: 50)
+            
+            self.addSubview(subviewArray[curveNumber][i])
+        }
+        
     }
 
     

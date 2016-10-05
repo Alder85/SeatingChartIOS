@@ -26,7 +26,7 @@ class GroupView: UIView
         super.init(frame: rect)
         self.frame = rect //test if necessary
         self.setNeedsDisplay(self.frame) //is context necessary? test
-        self.backgroundColor = randomUIColor()
+        self.backgroundColor = randomDarkUIColor()
         
         
         
