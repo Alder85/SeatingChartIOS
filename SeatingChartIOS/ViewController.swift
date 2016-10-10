@@ -20,10 +20,10 @@ class ViewController: UIViewController
         let rectangleView = RectangleView(startPoint: CGPoint(x: 50, y: 50), subviews: 1)
         self.view.addSubview(rectangleView)
         
-        let curveView = CurveView(inRect: CGRect(0,0,300,300), isLeft: true, rows: 2)
+        //let curveView = CurveView(inRect: CGRect(0,0,300,300), isLeft: true, rows: 2)
         //self.view.addSubview(curveView)
         
-        let curveView1 = CurveView(inRect: CGRect(0,0,400,400), isLeft: false, rows: 3)
+        let curveView1 = CurveView(inRect: CGRect(0,0,600,600), isLeft: false, rows: 6)
         self.view.addSubview(curveView1)
         
         

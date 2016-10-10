@@ -22,8 +22,7 @@ class CurveView: GroupView
         leftRect = isLeft
         numRows = rows
         super.init(rect: inRect)
-        makeButtons()
-        
+        makeButtons()        
         
         for i in 0...(Int(rows - 1))
         {
@@ -69,7 +68,6 @@ class CurveView: GroupView
     
     func makeAddButton(_ point: CGPoint, row: Int)
     {
-        //let button = UIButton(frame: CGRect(origin: point, size: CGSize(width: buttonSize, height: buttonSize))) //add views
         let button = UIButton(type: UIButtonType.system)
         button.setTitle("+", for: UIControlState())
         button.setTitleColor(randomUIColor(), for: UIControlState())
@@ -96,8 +94,6 @@ class CurveView: GroupView
     
     func addView(_ obj: UIButton)
     {
-        Swift.print(obj.restorationIdentifier)
-        //addViewInt(Int(obj.identifier!)!)
         let rowNumber = Int(obj.restorationIdentifier!)!
         let temp = GroupSubview(inRect: CGRect(x: 100, y: 100, width: 50, height: 50))
         subviewArray[rowNumber].insert(temp, at: subviewArray[rowNumber].count)
@@ -109,7 +105,6 @@ class CurveView: GroupView
     
     func removeView(_ obj: UIButton)
     {
-        Swift.print(obj.restorationIdentifier)
         let rowNumber = Int(obj.restorationIdentifier!)!
         if(subviewArray[rowNumber].count > 0)
         {
@@ -180,7 +175,6 @@ class CurveView: GroupView
         for i in 0...numSubviews - 1
         {
             let t = ((M_PI / 2) / Double(numSubviews - 1)) * Double(i)
-            //let tempX = self.frame.maxX - (round( CGFloat(Double(startSpot) * cos(t)) ) + 50)
             let tempX = self.frame.width - round( CGFloat(Double(startSpot) * cos(t)) ) - SUBVIEW_SIZE
             let tempY = round( CGFloat(Double(startSpot) * sin(t)) )
             

@@ -48,7 +48,6 @@ class GroupView: UIView
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             var currentPoint = touch.location(in: self.superview)
-            //Swift.print("Current Point = ", currentPoint ,"CurrentOffset = ", currentOffset)
             currentPoint.x -= currentOffset.x
             currentPoint.y -= currentOffset.y
             self.frame = CGRect(origin: currentPoint, size: self.frame.size)
