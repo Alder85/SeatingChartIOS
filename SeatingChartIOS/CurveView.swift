@@ -17,6 +17,7 @@ class CurveView: GroupView
     let BUTTON_SIZE: CGFloat = 20
     let SUBVIEW_SIZE: CGFloat = 50
     
+    
     init(inRect: CGRect, isLeft: Bool, rows: CGFloat)
     {
         leftRect = isLeft

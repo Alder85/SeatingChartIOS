@@ -118,10 +118,10 @@
 				332892D01D81BBA8007E10F5 /* LaunchScreen.storyboard */,
 				332892D31D81BBA8007E10F5 /* Info.plist */,
 				332892F51D81BC31007E10F5 /* StudentView.swift */,
-				332892F71D81BD17007E10F5 /* Student.swift */,
 				33752C631D870719003A1D76 /* UtilityFunctions.swift */,
 				330DDAE81D885221006B7570 /* GroupView.swift */,
 				3303710A1D89A33500C571B8 /* GroupSubview.swift */,
+				332892F71D81BD17007E10F5 /* Student.swift */,
 				3303710C1D89A84900C571B8 /* RectangleView.swift */,
 				334F25B41D99792C001C296D /* CurveView.swift */,
 			);

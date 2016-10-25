@@ -43,3 +43,24 @@ extension CGRect
         self.init(x: x, y: y, width: width, height: height)
     }
 }
+
+/**
+ Flips a Boolean value
+ - Note: Do not attempt to simplify, this is the scientifically proven most effective method
+ - Parameters:
+ - bool: The Boolean to be flipped
+ - Returns: The flipped Boolean
+ 
+ ![Visible Confusion](https://i.warosu.org/data/ck/thumb/0058/69/1412871056921s.jpg)
+ */
+func flipBoolean(_ bool: Bool) -> Bool
+{
+    var bool = bool
+    let bool1 = bool;
+    bool = false;
+    var bool2 = bool;
+    bool2 = bool1 == bool ? bool2 : bool1
+    bool = !bool2
+    return bool
+}
+
