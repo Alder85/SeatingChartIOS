@@ -18,9 +18,6 @@ class ViewController: UIViewController
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
-
-        
         //let curveView = CurveView(inRect: CGRect(0,0,300,300), isLeft: true, rows: 2)
         //self.view.addSubview(curveView)
         /*
@@ -28,9 +25,9 @@ class ViewController: UIViewController
         self.view.addSubview(curveView1)
         */
         
-        let testStudent = Student(inName: "trash", inChair: 3, inInstrument: "potatoesalad")
-        let testStudentView = StudentView(startPoint: CGPoint(x: 10, y: 10), inStudent: testStudent)
-        self.view.addSubview(testStudentView)
+            let testStudent = Student(inName: "trash", inChair: 3, inInstrument: "potatoesalad")
+            let testStudentView = StudentView(startPoint: CGPoint(x: 10, y: 10), inStudent: testStudent)
+            self.view.addSubview(testStudentView)
         
         addCurveViewButton()
         addRectangleViewButton()
@@ -43,10 +40,11 @@ class ViewController: UIViewController
         cvButton.setTitle("Add CurveView", for: UIControlState())
         cvButton.setTitleColor(randomUIColor(), for: UIControlState())
         cvButton.backgroundColor = UIColor.white
-        cvButton.frame = CGRect(UIScreen.main.bounds.width - 150, 50, 150, 50)
+        cvButton.frame = CGRect(screenLength() - 150, 50, 150, 50)
         cvButton.addTarget(self, action: #selector(self.openCVMenu(sender:)), for: .touchUpInside)
         //cvButton.restorationIdentifier = String(row - 1)
         self.view.addSubview(cvButton)
+        self.view.sendSubview(toBack: cvButton)
     }
     
     func addRectangleViewButton()
@@ -55,7 +53,7 @@ class ViewController: UIViewController
         rvButton.setTitle("Add RectangleView", for: UIControlState())
         rvButton.setTitleColor(randomUIColor(), for: UIControlState())
         rvButton.backgroundColor = UIColor.white
-        rvButton.frame = CGRect(UIScreen.main.bounds.width - 150, 100, 150, 50)
+        rvButton.frame = CGRect(screenLength() - 150, 100, 150, 50)
         rvButton.addTarget(self, action: #selector(self.addRectangleView), for: .touchUpInside)
         self.view.addSubview(rvButton)
     }
@@ -64,6 +62,7 @@ class ViewController: UIViewController
     {
         let rectangleView = RectangleView(startPoint: CGPoint(x: 50, y: 50), subviews: 1)
         self.view.addSubview(rectangleView)
+        self.view.sendSubview(toBack: rectangleView)
     }
     func openCVMenu(sender: UIButton)
     {
@@ -87,6 +86,7 @@ class ViewController: UIViewController
     {
         let newCurveView = CurveView(inRect: CGRect(0,0,400,400), isLeft: isLeft, rows: numRows)
         self.view.addSubview(newCurveView)
+        self.view.sendSubview(toBack: newCurveView)
     }
     
     /*

@@ -44,6 +44,19 @@ extension CGRect
     }
 }
 
+/*
+ Longer screen dimension, because height and width change when device is rotated
+ */
+func screenLength() -> CGFloat
+{
+    return max(UIScreen.main.bounds.height, UIScreen.main.bounds.width)
+}
+
+func screenWidth() -> CGFloat
+{
+    return min(UIScreen.main.bounds.height, UIScreen.main.bounds.width)
+}
+
 /**
  Flips a Boolean value
  - Note: Do not attempt to simplify, this is the scientifically proven most effective method

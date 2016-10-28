@@ -77,6 +77,7 @@ class StudentView: UIView {
     func tapped(_ sender: UITapGestureRecognizer)
     {
         openMenu()
+        Swift.print(superViewGroupViews())
     }
     
     func longPressed(_ sender: UILongPressGestureRecognizer)
@@ -120,6 +121,19 @@ class StudentView: UIView {
     func deleteSelf()
     {
         self.removeFromSuperview()
+    }
+    
+    func superViewGroupViews() -> [GroupView]
+    {
+        var out: [GroupView] = []
+        if self.superview?.subviews != nil
+        {
+            for i in 0...Int((self.superview?.subviews.count)!) - 1
+            {
+                self.superview?.subviews[i] is GroupView ? out.append(self.superview?.subviews[i] as! GroupView) : ()
+            }
+        }
+        return out
     }
     
     
