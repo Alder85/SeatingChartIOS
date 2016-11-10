@@ -44,6 +44,39 @@ extension CGRect
     }
 }
 
+extension CGSize
+{
+    init(_ width: CGFloat, _ height: CGFloat)
+    {
+        self.init(width: width, height: height)
+    }
+}
+extension CGPoint
+{
+    init(_ x: CGFloat, _ y: CGFloat)
+    {
+        self.init(x: x, y: y)
+    }
+}
+
+extension String {
+    
+    subscript (i: Int) -> Character {
+        return self[self.index(self.startIndex, offsetBy: i)]
+        
+    }
+    
+    subscript (i: Int) -> String {
+        return String(self[i] as Character)
+    }
+    
+    subscript (r: Range<Int>) -> String {
+        let start = index(startIndex, offsetBy: r.lowerBound)
+        let end = index(start, offsetBy: r.upperBound - r.lowerBound)
+        return self[Range(start ..< end)]
+    }
+}
+
 /*
  Longer screen dimension, because height and width change when device is rotated
  */
@@ -76,4 +109,7 @@ func flipBoolean(_ bool: Bool) -> Bool
     bool = !bool2
     return bool
 }
+
+
+
 
