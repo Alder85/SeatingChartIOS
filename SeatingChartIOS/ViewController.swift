@@ -12,9 +12,8 @@ import UIKit
 
 class ViewController: UIViewController, UIPopoverPresentationControllerDelegate
 {
-
-    var rvButton = UIButton()
     var vButton = UIButton()
+    let popoverContentController = UIViewController()
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -56,20 +55,31 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate
     
     func presentPopover()
     {
-        let popoverContentController = UIViewController()
         popoverContentController.view.backgroundColor = randomBrightUIColor()
         popoverContentController.preferredContentSize = CGSize(width: 300, height: 300)
         popoverContentController.modalPresentationStyle = UIModalPresentationStyle.popover
         popoverContentController.popoverPresentationController!.delegate = self
         
-        buttonLoop: for x in 0...2
+        buttonLoop: for x in 0...3
         {
             let potatoe = 10 + (60 * x)
             popoverContentController.view.addSubview(CVButton(isLeft: true, rows: x + 2, point: CGPoint(10, CGFloat(potatoe))))
             popoverContentController.view.addSubview(CVButton(isLeft: false, rows: x + 2, point: CGPoint(155, CGFloat(potatoe))))
         }
+        popoverContentController.view.addSubview(rectangleViewButton())
 
         self.present(popoverContentController, animated: true, completion: nil)
+    }
+    
+    func rectangleViewButton() -> UIButton
+    {
+        let rvButton = UIButton(type: UIButtonType.system)
+        rvButton.setTitle("Add RectangleView", for: UIControlState())
+        rvButton.setTitleColor(randomBrightUIColor(), for: UIControlState())
+        rvButton.backgroundColor = randomDarkUIColor()
+        rvButton.frame = CGRect(10, 250, 280, 40)
+        rvButton.addTarget(self, action: #selector(self.addRectangleView), for: .touchUpInside)
+        return rvButton
     }
     
     func CVButton(isLeft: Bool, rows: Int, point: CGPoint) -> UIButton
@@ -101,6 +111,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate
         {
             addCurveView(true, CGFloat(Int(sender.restorationIdentifier!)!))
         }
+        popoverContentController.dismiss(animated: true, completion: nil)
     }
     
     func addCurveView(_ isLeft: Bool, _ numRows: CGFloat)

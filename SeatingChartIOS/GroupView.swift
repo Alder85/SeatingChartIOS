@@ -52,11 +52,22 @@ class GroupView: UIView
             currentPoint.y -= currentOffset.y
             self.frame = CGRect(origin: currentPoint, size: self.frame.size)
         }
+        updateSubviews()
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             _ = touch.location(in: self)
+        }
+    }
+    func updateSubviews()
+    {
+        for x in 0...subviewArray.count - 1
+        {
+            for y in 0...subviewArray[0].count - 1
+            {
+                subviewArray[x][y].dragStudent()
+            }
         }
     }
 

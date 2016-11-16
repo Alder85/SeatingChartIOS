@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+func isInRange(_ testVal: CGFloat, _ val1: CGFloat, _ val2: CGFloat) -> Bool
+{
+    return testVal > val1 && testVal < val2
+}
+
 func randomUIColor() -> UIColor
 {
     let hue : CGFloat = CGFloat(arc4random() % 256) / 256 // use 256 to get full range from 0.0 to 1.0

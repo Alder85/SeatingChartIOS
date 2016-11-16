@@ -70,6 +70,7 @@ class StudentView: UIView {
         if let touch = touches.first {
             _ = touch.location(in: self)
         }
+        snapIfPossible()
     }
     
     
@@ -123,6 +124,8 @@ class StudentView: UIView {
         self.removeFromSuperview()
     }
     
+    //Snappable stuff
+    //Gets array of available GroupViews
     func superViewGroupViews() -> [GroupView]
     {
         var out: [GroupView] = []
@@ -134,6 +137,25 @@ class StudentView: UIView {
             }
         }
         return out
+    }
+    
+    func snapIfPossible()
+    {
+        if superViewGroupViews().count > 0 //look into stride to fix this
+        {
+            gvLoop: for gvCount in 0...superViewGroupViews().count - 1
+            {
+                let currentGV = superViewGroupViews()[gvCount]
+                for svCountX in 0...currentGV.subviewArray.count - 1
+                {
+                    for svCountY in 0...currentGV.subviewArray[svCountX].count - 1
+                    {
+                        let currentSV = currentGV.subviewArray[svCountX][svCountY]
+                        currentSV.setSVIfPossible(sv: self)
+                    }
+                }
+            }
+        }
     }
     
     
