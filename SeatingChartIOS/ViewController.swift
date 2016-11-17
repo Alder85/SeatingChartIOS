@@ -22,6 +22,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate
         let testStudentView = StudentView(startPoint: CGPoint(x: 10, y: 10), inStudent: testStudent)
         self.view.addSubview(testStudentView)
         addViewButton()
+        initPCC()
         
     }
     func addViewButton()
@@ -52,13 +53,11 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate
         self.view.addSubview(alignView)
         popoverPresentationController.sourceView = alignView
     }
-    
-    func presentPopover()
+    func initPCC()
     {
         popoverContentController.view.backgroundColor = randomBrightUIColor()
-        popoverContentController.preferredContentSize = CGSize(width: 300, height: 300)
         popoverContentController.modalPresentationStyle = UIModalPresentationStyle.popover
-        popoverContentController.popoverPresentationController!.delegate = self
+        popoverContentController.preferredContentSize = CGSize(width: 300, height: 300)
         
         buttonLoop: for x in 0...3
         {
@@ -67,7 +66,11 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate
             popoverContentController.view.addSubview(CVButton(isLeft: false, rows: x + 2, point: CGPoint(155, CGFloat(potatoe))))
         }
         popoverContentController.view.addSubview(rectangleViewButton())
-
+    }
+    
+    func presentPopover()
+    {
+        popoverContentController.popoverPresentationController!.delegate = self //dismissing requires this to be done again
         self.present(popoverContentController, animated: true, completion: nil)
     }
     
@@ -126,6 +129,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate
         let rectangleView = RectangleView(startPoint: CGPoint(x: 50, y: 50), subviews: 1)
         self.view.addSubview(rectangleView)
         self.view.sendSubview(toBack: rectangleView)
+        popoverContentController.dismiss(animated: true, completion: nil)
     }
     
     

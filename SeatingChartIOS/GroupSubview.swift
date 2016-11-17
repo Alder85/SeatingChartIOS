@@ -27,17 +27,16 @@ class GroupSubview: UIView
         randomBrightUIColor().setFill()
         UIRectFill(rect)
     }
+    
     func dragStudent()
     {
         let frameTSSV = (self.superview!.superview?.convert(self.frame, from: self.superview))! as CGRect
         stuV?.frame = CGRect(origin: frameTSSV.origin, size: stuV!.frame.size)
     }
-    
+ 
     func setSVIfPossible(sv: StudentView)
     {
-        Swift.print(sv.thisStudent.getName())
         let frameTSSV = (self.superview!.superview?.convert(self.frame, from: self.superview))! as CGRect
-        Swift.print(frameTSSV)
         if isInRange(sv.frame.midX, frameTSSV.minX, frameTSSV.maxX) &&
            isInRange(sv.frame.midY, frameTSSV.minY, frameTSSV.maxY)
         {
@@ -45,8 +44,13 @@ class GroupSubview: UIView
             else
             {
                 stuV = sv
-                stuV?.frame = CGRect(origin: frameTSSV.origin, size: stuV!.frame.size)
             }
+            stuV?.frame = CGRect(origin: frameTSSV.origin, size: stuV!.frame.size)
+
+        }
+        else
+        {
+            stuV = nil
         }
     }
 }
