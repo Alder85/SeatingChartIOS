@@ -141,6 +141,20 @@ class StudentView: UIView {
     
     func snapIfPossible()
     {
+        //max in stride is automatically one lower
+        for gvCount in stride(from: 0, to: superViewGroupViews().count, by: 1)
+        {
+            let currentGV = superViewGroupViews()[gvCount]
+            for svCountX in stride(from: 0, to: currentGV.subviewArray.count, by: 1)
+            {
+                for svCountY in stride(from: 0, to: currentGV.subviewArray[svCountX].count, by: 1)
+                {
+                    let currentSV = currentGV.subviewArray[svCountX][svCountY]
+                    currentSV.setSVIfPossible(sv: self)
+                }
+            }
+        }
+        /*
         if superViewGroupViews().count > 0 //look into stride to fix this
         {
             gvLoop: for gvCount in 0...superViewGroupViews().count - 1
@@ -148,14 +162,18 @@ class StudentView: UIView {
                 let currentGV = superViewGroupViews()[gvCount]
                 for svCountX in 0...currentGV.subviewArray.count - 1
                 {
-                    for svCountY in 0...currentGV.subviewArray[svCountX].count - 1
+                    if currentGV.subviewArray[svCountX].count > 0
                     {
-                        let currentSV = currentGV.subviewArray[svCountX][svCountY]
-                        currentSV.setSVIfPossible(sv: self)
+                        for svCountY in 0...currentGV.subviewArray[svCountX].count - 1
+                        {
+                            let currentSV = currentGV.subviewArray[svCountX][svCountY]
+                            currentSV.setSVIfPossible(sv: self)
+                        }
                     }
                 }
             }
         }
+ */
     }
     
     

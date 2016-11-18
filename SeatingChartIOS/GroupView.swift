@@ -60,13 +60,19 @@ class GroupView: UIView
             _ = touch.location(in: self)
         }
     }
-    func updateSubviews()
+    func updateSubviews() //optimize this plz
     {
-        for x in 0...subviewArray.count - 1
+        if subviewArray.count > 0
         {
-            for y in 0...subviewArray[0].count - 1
+            for x in 0...subviewArray.count - 1
             {
-                subviewArray[x][y].dragStudent()
+                if subviewArray[x].count > 0
+                {
+                    for y in 0...subviewArray[x].count - 1
+                    {
+                        subviewArray[x][y].dragStudent()
+                    }
+                }
             }
         }
     }

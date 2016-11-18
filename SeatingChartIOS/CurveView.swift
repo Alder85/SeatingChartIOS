@@ -34,10 +34,10 @@ class CurveView: GroupView
                 subviewArray[i].insert(temp, at: q)
             }
         }
-        
+        self.setNeedsDisplay(self.frame) //makes context exist
         
         updateSubviewCurves()
-        self.setNeedsDisplay(self.frame) //makes context exist
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -130,6 +130,7 @@ class CurveView: GroupView
                 makeLeftSubviewCurve(startSpot, curveNumber: (i-1))
             }
         }
+        updateSubviews()
     }
     
     func makeRightSubviewCurve(_ startSpot: CGFloat, curveNumber: Int)
@@ -169,7 +170,7 @@ class CurveView: GroupView
         if numSubviews == 1
         {
             let tempDegree = round( CGFloat(Double(startSpot) * sin(M_PI / 4)) )
-            subviewArray[curveNumber][0].frame = CGRect(x: tempDegree, y: tempDegree, width: SUBVIEW_SIZE, height: SUBVIEW_SIZE)
+            subviewArray[curveNumber][0].frame = CGRect(x: self.frame.width - tempDegree - SUBVIEW_SIZE, y: self.frame.height - tempDegree - SUBVIEW_SIZE, width: SUBVIEW_SIZE, height: SUBVIEW_SIZE)
             self.addSubview(subviewArray[curveNumber][0])
             return
         }

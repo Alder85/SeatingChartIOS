@@ -30,8 +30,10 @@ class GroupSubview: UIView
     
     func dragStudent()
     {
-        let frameTSSV = (self.superview!.superview?.convert(self.frame, from: self.superview))! as CGRect
-        stuV?.frame = CGRect(origin: frameTSSV.origin, size: stuV!.frame.size)
+        if let frameTSSV = self.superview!.superview?.convert(self.frame, from: self.superview)
+        {
+            stuV?.frame = CGRect(origin: frameTSSV.origin, size: stuV!.frame.size)
+        }
     }
  
     func setSVIfPossible(sv: StudentView)
