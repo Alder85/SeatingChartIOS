@@ -25,7 +25,7 @@ class CurveView: GroupView
         super.init(rect: inRect)
         makeButtons()        
         
-        for i in 0...(Int(rows - 1))
+        for i in stride(from: 0, to: Int(rows), by: 1)
         {
             subviewArray.insert([], at: i)
             for q in 0...4
@@ -147,7 +147,7 @@ class CurveView: GroupView
             self.addSubview(subviewArray[curveNumber][0])
             return
         }
-        for i in 0...numSubviews - 1
+        for i in stride(from: 0, to: numSubviews, by: 1)
         {
             let t = ((M_PI / 2) / Double(numSubviews - 1)) * Double(i)
             let tempX = round( CGFloat(Double(startSpot) * cos(t)) )
@@ -174,7 +174,7 @@ class CurveView: GroupView
             self.addSubview(subviewArray[curveNumber][0])
             return
         }
-        for i in 0...numSubviews - 1
+        for i in stride(from: 0, to: numSubviews, by: 1)
         {
             let t = ((M_PI / 2) / Double(numSubviews - 1)) * Double(i)
             let tempX = self.frame.width - round( CGFloat(Double(startSpot) * cos(t)) ) - SUBVIEW_SIZE

@@ -23,12 +23,12 @@ class RectangleView: GroupView
         numberOfSubviews = subviews
         subviewArray.append([])
         
-        for _ in 0...numberOfSubviews - 1
+        for _ in stride(from: 0, to: numberOfSubviews, by: 1)
         {
             let temp = GroupSubview(inRect: CGRect(x: position, y: (self.frame.height / 2) - 25, width: 50, height: 50))
             subviewArray[0].append(temp)
             self.addSubview(subviewArray[0][subviewArray[0].count - 1])
-            position = position + 60
+            position += 60
         }
 
         let addViewButton = UIButton(type: UIButtonType.system) //add views

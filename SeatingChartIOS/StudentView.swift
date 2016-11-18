@@ -131,7 +131,7 @@ class StudentView: UIView {
         var out: [GroupView] = []
         if self.superview?.subviews != nil
         {
-            for i in 0...Int((self.superview?.subviews.count)!) - 1
+            for i in stride(from: 0, to: self.superview!.subviews.count, by: 1)
             {
                 self.superview?.subviews[i] is GroupView ? out.append(self.superview?.subviews[i] as! GroupView) : ()
             }
@@ -154,26 +154,6 @@ class StudentView: UIView {
                 }
             }
         }
-        /*
-        if superViewGroupViews().count > 0 //look into stride to fix this
-        {
-            gvLoop: for gvCount in 0...superViewGroupViews().count - 1
-            {
-                let currentGV = superViewGroupViews()[gvCount]
-                for svCountX in 0...currentGV.subviewArray.count - 1
-                {
-                    if currentGV.subviewArray[svCountX].count > 0
-                    {
-                        for svCountY in 0...currentGV.subviewArray[svCountX].count - 1
-                        {
-                            let currentSV = currentGV.subviewArray[svCountX][svCountY]
-                            currentSV.setSVIfPossible(sv: self)
-                        }
-                    }
-                }
-            }
-        }
- */
     }
     
     
