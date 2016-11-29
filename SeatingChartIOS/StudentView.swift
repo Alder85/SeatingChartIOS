@@ -31,6 +31,8 @@ class StudentView: UIView {
         self.setNeedsDisplay(self.frame) //is context necessary? test
         self.backgroundColor = randomUIColor()
         
+        self.setCornerRadius(radius: 5.0)
+        
         let label = UILabel(frame: CGRect(x: -20, y: 0, width: 200, height: 50))
         let stringData = NSAttributedString(string: thisStudent.getName(), attributes: [
             NSStrokeColorAttributeName : UIColor.lightGray,
@@ -78,7 +80,7 @@ class StudentView: UIView {
     func tapped(_ sender: UITapGestureRecognizer)
     {
         openMenu()
-        Swift.print(superViewGroupViews())
+       // Swift.print(superViewGroupViews())
     }
     
     func longPressed(_ sender: UILongPressGestureRecognizer)

@@ -47,6 +47,7 @@ extension CGRect
     {
         self.init(x: x, y: y, width: width, height: height)
     }
+    
 }
 
 extension CGSize
@@ -55,6 +56,8 @@ extension CGSize
     {
         self.init(width: width, height: height)
     }
+    
+    
 }
 extension CGPoint
 {
@@ -79,6 +82,15 @@ extension String {
         let start = index(startIndex, offsetBy: r.lowerBound)
         let end = index(start, offsetBy: r.upperBound - r.lowerBound)
         return self[Range(start ..< end)]
+    }
+}
+
+extension UIView
+{
+    func setCornerRadius(radius: CGFloat?)
+    {
+        self.layer.cornerRadius = radius ?? self.frame.width / 2;
+        self.layer.masksToBounds = true;
     }
 }
 

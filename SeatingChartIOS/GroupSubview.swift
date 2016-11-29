@@ -16,6 +16,7 @@ class GroupSubview: UIView
     {
         super.init(frame: inRect)
         self.frame = inRect
+        self.setCornerRadius(radius: 5.0)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -52,7 +53,10 @@ class GroupSubview: UIView
         }
         else
         {
-            stuV = nil
+            if sv == stuV
+            {
+                stuV = nil
+            }
         }
     }
 }

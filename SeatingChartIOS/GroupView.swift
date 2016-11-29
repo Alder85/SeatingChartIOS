@@ -28,7 +28,7 @@ class GroupView: UIView
         self.setNeedsDisplay(self.frame) //is context necessary? test
         self.backgroundColor = randomDarkUIColor()
         
-        
+        self.setCornerRadius(radius: 8.0)
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(GroupView.tapped(_:)))
         self.addGestureRecognizer(tapGestureRecognizer)
