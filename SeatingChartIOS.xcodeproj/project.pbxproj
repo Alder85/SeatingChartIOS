@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00E1F0258A68961EA8B7FD8E /* Pods_SeatingChartIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9BD35A48B7A1E5A02A6073 /* Pods_SeatingChartIOS.framework */; };
 		3303710B1D89A33500C571B8 /* GroupSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3303710A1D89A33500C571B8 /* GroupSubview.swift */; };
 		3303710D1D89A84900C571B8 /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3303710C1D89A84900C571B8 /* RectangleView.swift */; };
 		330DDAE91D885221006B7570 /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330DDAE81D885221006B7570 /* GroupView.swift */; };
@@ -21,6 +22,8 @@
 		332892F81D81BD17007E10F5 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332892F71D81BD17007E10F5 /* Student.swift */; };
 		334F25B51D99792C001C296D /* CurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334F25B41D99792C001C296D /* CurveView.swift */; };
 		33752C641D870719003A1D76 /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33752C631D870719003A1D76 /* UtilityFunctions.swift */; };
+		3390FE8D1E390E0F00FE6215 /* SheetsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3390FE8C1E390E0F00FE6215 /* SheetsAPI.swift */; };
+		33BD5F6D1E3BAE300043D1C6 /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BD5F6C1E3BAE300043D1C6 /* MainMenuController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,13 @@
 		332892F71D81BD17007E10F5 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		334F25B41D99792C001C296D /* CurveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveView.swift; sourceTree = "<group>"; };
 		33752C631D870719003A1D76 /* UtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
+		3390FE8C1E390E0F00FE6215 /* SheetsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetsAPI.swift; sourceTree = "<group>"; };
+		33BD5F6C1E3BAE300043D1C6 /* MainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
+		5FC0CE9B4691FFEA28F059A5 /* Pods-SeatingChartIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeatingChartIOS.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-SeatingChartIOS/Pods-SeatingChartIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		8B9BD35A48B7A1E5A02A6073 /* Pods_SeatingChartIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeatingChartIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		958C5E13EEEB9FD635A258CE /* Pods-SeatingChartIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeatingChartIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SeatingChartIOS/Pods-SeatingChartIOS.release.xcconfig"; sourceTree = "<group>"; };
+		9D4A1FFC8E16CC09FC6374D0 /* Pods-SeatingChartIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeatingChartIOS.release.xcconfig"; path = "../Pods/Target Support Files/Pods-SeatingChartIOS/Pods-SeatingChartIOS.release.xcconfig"; sourceTree = "<group>"; };
+		A1FB177208E9FABCCBDEA989 /* Pods-SeatingChartIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeatingChartIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SeatingChartIOS/Pods-SeatingChartIOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00E1F0258A68961EA8B7FD8E /* Pods_SeatingChartIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +106,8 @@
 				332892DB1D81BBA8007E10F5 /* SeatingChartIOSTests */,
 				332892E61D81BBA8007E10F5 /* SeatingChartIOSUITests */,
 				332892C51D81BBA8007E10F5 /* Products */,
+				4F17B4D90FD91E72E016FFFF /* Pods */,
+				995DCD03506377177C1E889B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +126,7 @@
 			children = (
 				332892C71D81BBA8007E10F5 /* AppDelegate.swift */,
 				332892C91D81BBA8007E10F5 /* ViewController.swift */,
+				33BD5F6C1E3BAE300043D1C6 /* MainMenuController.swift */,
 				332892CB1D81BBA8007E10F5 /* Main.storyboard */,
 				332892CE1D81BBA8007E10F5 /* Assets.xcassets */,
 				332892D01D81BBA8007E10F5 /* LaunchScreen.storyboard */,
@@ -124,6 +138,7 @@
 				332892F71D81BD17007E10F5 /* Student.swift */,
 				3303710C1D89A84900C571B8 /* RectangleView.swift */,
 				334F25B41D99792C001C296D /* CurveView.swift */,
+				3390FE8C1E390E0F00FE6215 /* SheetsAPI.swift */,
 			);
 			path = SeatingChartIOS;
 			sourceTree = "<group>";
@@ -146,6 +161,25 @@
 			path = SeatingChartIOSUITests;
 			sourceTree = "<group>";
 		};
+		4F17B4D90FD91E72E016FFFF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A1FB177208E9FABCCBDEA989 /* Pods-SeatingChartIOS.debug.xcconfig */,
+				958C5E13EEEB9FD635A258CE /* Pods-SeatingChartIOS.release.xcconfig */,
+				5FC0CE9B4691FFEA28F059A5 /* Pods-SeatingChartIOS.debug.xcconfig */,
+				9D4A1FFC8E16CC09FC6374D0 /* Pods-SeatingChartIOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		995DCD03506377177C1E889B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B9BD35A48B7A1E5A02A6073 /* Pods_SeatingChartIOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,9 +187,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 332892EC1D81BBA8007E10F5 /* Build configuration list for PBXNativeTarget "SeatingChartIOS" */;
 			buildPhases = (
+				EDC54BEC7C13986239E69759 /* [CP] Check Pods Manifest.lock */,
 				332892C01D81BBA8007E10F5 /* Sources */,
 				332892C11D81BBA8007E10F5 /* Frameworks */,
 				332892C21D81BBA8007E10F5 /* Resources */,
+				DD259EA7CCA5CC9685C1ADCA /* [CP] Embed Pods Frameworks */,
+				E04FC7E1A9C5D02EB9934555 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -275,6 +312,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DD259EA7CCA5CC9685C1ADCA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-SeatingChartIOS/Pods-SeatingChartIOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E04FC7E1A9C5D02EB9934555 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-SeatingChartIOS/Pods-SeatingChartIOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDC54BEC7C13986239E69759 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		332892C01D81BBA8007E10F5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -288,6 +373,8 @@
 				33752C641D870719003A1D76 /* UtilityFunctions.swift in Sources */,
 				332892F81D81BD17007E10F5 /* Student.swift in Sources */,
 				3303710D1D89A84900C571B8 /* RectangleView.swift in Sources */,
+				33BD5F6D1E3BAE300043D1C6 /* MainMenuController.swift in Sources */,
+				3390FE8D1E390E0F00FE6215 /* SheetsAPI.swift in Sources */,
 				3303710B1D89A33500C571B8 /* GroupSubview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +522,7 @@
 		};
 		332892ED1D81BBA8007E10F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FC0CE9B4691FFEA28F059A5 /* Pods-SeatingChartIOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SeatingChartIOS/Info.plist;
@@ -448,6 +536,7 @@
 		};
 		332892EE1D81BBA8007E10F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D4A1FFC8E16CC09FC6374D0 /* Pods-SeatingChartIOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SeatingChartIOS/Info.plist;

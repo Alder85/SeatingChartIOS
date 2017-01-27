@@ -33,6 +33,7 @@ class StudentView: UIView {
         
         self.setCornerRadius(radius: 5.0)
         
+        
         let label = UILabel(frame: CGRect(x: -20, y: 0, width: 200, height: 50))
         let stringData = NSAttributedString(string: thisStudent.getName(), attributes: [
             NSStrokeColorAttributeName : UIColor.lightGray,
@@ -41,6 +42,8 @@ class StudentView: UIView {
             NSFontAttributeName : UIFont.systemFont(ofSize: 30.0)
             ])
         label.attributedText = stringData//thisStudent.getName()
+       // self.layer.insertSublayer(label.layer, at: 1)
+        
         self.addSubview(label)
 
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(StudentView.tapped(_:)))

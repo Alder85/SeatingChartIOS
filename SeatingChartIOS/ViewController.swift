@@ -14,6 +14,8 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate
 {
     var vButton = UIButton()
     let popoverContentController = UIViewController()
+    var sheetsAPI = SheetsAPI()
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -25,6 +27,12 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate
         initPCC()
         
     }
+    
+    @IBAction func authorize(_ sender: Any)
+    {
+        sheetsAPI.auth(viewController: self)
+    }
+    
     func addViewButton()
     {
         vButton = UIButton(type: UIButtonType.system)
