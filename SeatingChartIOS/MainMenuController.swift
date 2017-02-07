@@ -8,15 +8,29 @@
 
 import Foundation
 import UIKit
+import GTMAppAuth
+import GoogleAPIClient
+import GoogleAPIClientForREST
 
 class MainMenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
 {
-    
     @IBOutlet weak var pickerView: UIPickerView!
-    
+    let sheetsAPI = SheetsAPI()
     override func viewDidLoad()
     {
-        currentFile = fileList[0]
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        self.view.setNeedsDisplay()
+        pickerView.setNeedsDisplay()
+        _ = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(reloadPicker), userInfo: nil, repeats: true)
+    }
+    func reloadPicker()
+    {
+        pickerView.reloadAllComponents()
+    }
+    @IBAction func login(_ sender: Any)
+    {
+        sheetsAPI.auth(viewController: self)
     }
     
     //Data Sources
@@ -30,7 +44,6 @@ class MainMenuController: UIViewController, UIPickerViewDataSource, UIPickerView
     //Delegates
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
-        
         return fileList[row].name
     }
     
@@ -46,7 +59,7 @@ class MainMenuController: UIViewController, UIPickerViewDataSource, UIPickerView
         {
             pickerLabel = UILabel()
             let hue = CGFloat(row)/CGFloat(fileList.count)
-            pickerLabel?.backgroundColor = UIColor(hue: hue, saturation: 1.0, brightness: 1.0, alpha: 1.0)
+            pickerLabel?.backgroundColor = UIColor(hue: hue, saturation: 1.0, brightness: 0.8, alpha: 1.0)
         }
         let titleData = fileList[row].name
         let myTitle = NSAttributedString(string: titleData!, attributes: [NSFontAttributeName:UIFont(name: "Arial", size: 16.0)!,NSForegroundColorAttributeName:UIColor.black])
