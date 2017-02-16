@@ -12,23 +12,31 @@ import GTMAppAuth
 import GoogleAPIClient
 import GoogleAPIClientForREST
 
+let sheetsAPI = SheetsAPI()
+
 class MainMenuController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
 {
     @IBOutlet weak var pickerView: UIPickerView!
-    let sheetsAPI = SheetsAPI()
+    
     override func viewDidLoad()
     {
         pickerView.dataSource = self
         pickerView.delegate = self
         self.view.setNeedsDisplay()
         pickerView.setNeedsDisplay()
+        let namePlate = GoogleNamePlate(origin: CGPoint(0,0))
+        self.view.addSubview(namePlate)
+        if sheetsAPI.loadState()
+        {
+            login()
+        }
         _ = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(reloadPicker), userInfo: nil, repeats: true)
     }
     func reloadPicker()
     {
         pickerView.reloadAllComponents()
     }
-    @IBAction func login(_ sender: Any)
+    func login()
     {
         sheetsAPI.auth(viewController: self)
     }
@@ -50,7 +58,10 @@ class MainMenuController: UIViewController, UIPickerViewDataSource, UIPickerView
     //On Selection
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
-        currentFile = fileList[row]
+        if(fileList.count > 0)
+        {
+            currentFile = fileList[row]
+        }
     }
     //Display Rainbow
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {

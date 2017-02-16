@@ -15,6 +15,7 @@ import GoogleAPIClientForREST
 //Global Data
 var fileList: [GTLDriveFile] = []
 var currentFile: GTLDriveFile?
+var authorization: GTMAppAuthFetcherAuthorization?
 
 class SheetsAPI: NSObject
 {
@@ -30,11 +31,22 @@ class SheetsAPI: NSObject
     let kAuthorizerKey = "authorization"
     
     
-    var authorization: GTMAppAuthFetcherAuthorization?
+    
     private let service = GTLRSheetsService()
     private let driveService = GTLServiceDrive()
     
-    func auth(viewController: UIViewController)
+    func storeState() -> Bool
+    {
+        if authorization != nil && (authorization?.canAuthorize())! {
+            let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: authorization!)
+            self.userDefaults.set(encodedData, forKey: self.kAuthorizerKey)
+            self.userDefaults.synchronize()
+            return true
+        }
+        return false
+    }
+    
+    func loadState() -> Bool
     {
         if let _ = userDefaults.object(forKey: kAuthorizerKey)
         {
@@ -43,7 +55,23 @@ class SheetsAPI: NSObject
             authorization = testAuth
             service.authorizer = authorization
             driveService.authorizer = authorization
-            self.listDocuments()
+            return true
+        }
+        return false
+    }
+    
+    func removeState()
+    {
+        fileList = []
+        currentFile = nil
+        authorization = nil
+        self.userDefaults.removeObject(forKey: self.kAuthorizerKey)
+    }
+    func auth(viewController: UIViewController)
+    {
+        if loadState()
+        {
+            listDocuments()
         }
         else
         {
@@ -56,22 +84,17 @@ class SheetsAPI: NSObject
                     return
                 }
                 // builds authentication request
-                let scopes = [kGTLRAuthScopeSheetsSpreadsheets, kGTLRAuthScopeDrive]
+                let scopes = [kGTLRAuthScopeSheetsSpreadsheets, kGTLRAuthScopeDrive, kGTLAuthScopeDrive, "https://www.googleapis.com/auth/userinfo.profile"]
                 let request = OIDAuthorizationRequest(configuration: configuration!, clientId: self.kClientID, scopes: scopes, redirectURL: redirectURI, responseType: OIDResponseTypeCode, additionalParameters: nil)
                 // performs authentication request
                 self.appDelegate.currentAuthorizationFlow = OIDAuthState.authState(byPresenting: request, presenting: viewController, callback: {(_ authState: OIDAuthState?, _ error: Error?) -> Void in
                     if authState != nil {
-                        self.authorization = GTMAppAuthFetcherAuthorization(authState: authState!)
-                        self.service.authorizer = self.authorization
-                        self.driveService.authorizer = self.authorization
-                        if self.authorization != nil && (self.authorization?.canAuthorize())! {
-                            let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: self.authorization!)
-                            self.userDefaults.set(encodedData, forKey: self.kAuthorizerKey)
-                            self.userDefaults.synchronize()
-                        }
-                        else
+                        authorization = GTMAppAuthFetcherAuthorization(authState: authState!)
+                        self.service.authorizer = authorization
+                        self.driveService.authorizer = authorization
+                        if !self.storeState()
                         {
-                            self.userDefaults.removeObject(forKey: self.kAuthorizerKey)
+                            self.removeState()
                         }
                         self.listDocuments()
                         

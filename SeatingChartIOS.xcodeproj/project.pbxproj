@@ -23,6 +23,7 @@
 		334F25B51D99792C001C296D /* CurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334F25B41D99792C001C296D /* CurveView.swift */; };
 		33752C641D870719003A1D76 /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33752C631D870719003A1D76 /* UtilityFunctions.swift */; };
 		3390FE8D1E390E0F00FE6215 /* SheetsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3390FE8C1E390E0F00FE6215 /* SheetsAPI.swift */; };
+		33BCD9B11E4A2FDE0093393E /* GoogleNamePlate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BCD9B01E4A2FDE0093393E /* GoogleNamePlate.swift */; };
 		33BD5F6D1E3BAE300043D1C6 /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BD5F6C1E3BAE300043D1C6 /* MainMenuController.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		334F25B41D99792C001C296D /* CurveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveView.swift; sourceTree = "<group>"; };
 		33752C631D870719003A1D76 /* UtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
 		3390FE8C1E390E0F00FE6215 /* SheetsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetsAPI.swift; sourceTree = "<group>"; };
+		33BCD9B01E4A2FDE0093393E /* GoogleNamePlate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleNamePlate.swift; sourceTree = "<group>"; };
 		33BD5F6C1E3BAE300043D1C6 /* MainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
 		5FC0CE9B4691FFEA28F059A5 /* Pods-SeatingChartIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeatingChartIOS.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-SeatingChartIOS/Pods-SeatingChartIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		8B9BD35A48B7A1E5A02A6073 /* Pods_SeatingChartIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeatingChartIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +141,7 @@
 				3303710C1D89A84900C571B8 /* RectangleView.swift */,
 				334F25B41D99792C001C296D /* CurveView.swift */,
 				3390FE8C1E390E0F00FE6215 /* SheetsAPI.swift */,
+				33BCD9B01E4A2FDE0093393E /* GoogleNamePlate.swift */,
 			);
 			path = SeatingChartIOS;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				33752C641D870719003A1D76 /* UtilityFunctions.swift in Sources */,
 				332892F81D81BD17007E10F5 /* Student.swift in Sources */,
 				3303710D1D89A84900C571B8 /* RectangleView.swift in Sources */,
+				33BCD9B11E4A2FDE0093393E /* GoogleNamePlate.swift in Sources */,
 				33BD5F6D1E3BAE300043D1C6 /* MainMenuController.swift in Sources */,
 				3390FE8D1E390E0F00FE6215 /* SheetsAPI.swift in Sources */,
 				3303710B1D89A33500C571B8 /* GroupSubview.swift in Sources */,
